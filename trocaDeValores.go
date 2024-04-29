@@ -9,7 +9,7 @@ func main() {
 	fmt.Println("Digite o primeiro Valor: ")
 	_, err := fmt.Scan(&numeroUm)
 
-	if err != nil {
+	if err != nil || numeroUm < 0 {
 		fmt.Println("Erro ao ler primeiro valor")
 		return
 	}
@@ -17,7 +17,7 @@ func main() {
 	fmt.Println("Digite o segundo Valor: ")
 	_, err1 := fmt.Scan(&numeroDois)
 
-	if err1 != nil {
+	if err1 != nil || numeroDois < 0 {
 		fmt.Println("Erro ao ler segundo valor")
 		return
 	}

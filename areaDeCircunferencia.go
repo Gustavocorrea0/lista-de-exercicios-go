@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("Qual é o raio: ")
 	_, err := fmt.Scanln(&raio)
 
-	if err != nil {
+	if err != nil || raio < 0 {
 		fmt.Println("Erro ao ler o valor")
 		return
 	}

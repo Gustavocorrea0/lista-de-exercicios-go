@@ -3,28 +3,33 @@ package main
 import "fmt"
 
 func main() {
-	var primeiroNumeroDoIntervalor int
-	var segundoNumeroDoIntervalor int
+	var primeiroNumeroDoIntervalo int
+	var segundoNumeroDoIntervalo int
 
 	fmt.Println("Qual é o primeiro numero do intervalor: ")
-	_, err1 := fmt.Scanln(&primeiroNumeroDoIntervalor)
+	_, err1 := fmt.Scanln(&primeiroNumeroDoIntervalo)
 
-	if err1 != nil {
+	if err1 != nil || primeiroNumeroDoIntervalo < 0 {
 		fmt.Printf("Erro ao ler primeiro numero")
 		return
 	}
 
 	fmt.Println("Qual é o segundo numero do intervalo: ")
-	_, err2 := fmt.Scanln(&segundoNumeroDoIntervalor)
+	_, err2 := fmt.Scanln(&segundoNumeroDoIntervalo)
 
-	if err2 != nil {
+	if err2 != nil || segundoNumeroDoIntervalo < 0 {
 		fmt.Printf("Erro ao ler segundo numero")
 		return
 	}
 
-	fmt.Printf("+--------------------------------------------+")
+	fmt.Println("+--------------------------------------------+")
 
-	for i := primeiroNumeroDoIntervalor; i < segundoNumeroDoIntervalor; i++ {
+	if primeiroNumeroDoIntervalo > segundoNumeroDoIntervalo {
+		fmt.Println("O primeiro valor deve ser menor que o segundo")
+		return
+	}
+
+	for i := primeiroNumeroDoIntervalo; i < segundoNumeroDoIntervalo; i++ {
 		validarFizzBuzz(i)
 	}
 
