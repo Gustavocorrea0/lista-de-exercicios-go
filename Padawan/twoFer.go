@@ -7,13 +7,21 @@ import (
 
 func main() {
 	var nomeUsuario string
-	fmt.Println("Qual é o seu nome: ")
+
+	fmt.Println("+-------------------------------------------------+")
+	fmt.Println("|                      TwoFer                     |")
+	fmt.Println("+-------------------------------------------------+")
+	fmt.Println("| > Qual é o seu nome: ")
 	fmt.Scanln(&nomeUsuario)
 
 	nomeUsuario = strings.TrimSpace(nomeUsuario)
 	if nomeUsuario == "" {
-		fmt.Println("Um para você, um para mim")
+		fmt.Println("+-------------------------------------------------+")
+		fmt.Println("|            Um para você, um para mim            |")
+		fmt.Println("+-------------------------------------------------+")
 	} else {
-		fmt.Println("Um para ", nomeUsuario, " um para mim")
+		fmt.Println("+-------------------------------------------------+")
+		fmt.Println("| Um para", nomeUsuario, "um para mim")
+		fmt.Println("+-------------------------------------------------+")
 	}
 }

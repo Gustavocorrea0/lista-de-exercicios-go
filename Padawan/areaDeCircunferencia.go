@@ -5,13 +5,16 @@ import "fmt"
 func main() {
 
 	var raio float64
-
-	fmt.Println("Calculo de area da circunferencia")
-	fmt.Println("Qual é o raio: ")
+	fmt.Println("+----------------------------------------+")
+	fmt.Println("|    Calculo de area da circunferencia   |")
+	fmt.Println("+----------------------------------------+")
+	fmt.Println("| > Qual é o raio: ")
 	_, err := fmt.Scanln(&raio)
 
 	if err != nil || raio < 0 {
-		fmt.Println("Erro ao ler o valor")
+		fmt.Println("+----------------------------------------+")
+		fmt.Println("|          Erro ao ler o valor           |")
+		fmt.Println("+----------------------------------------+")
 		return
 	}
 
@@ -22,6 +25,8 @@ func main() {
 func calcular(valorRaio float64) {
 	var pi = 3.14159265
 	var area = pi * (valorRaio * valorRaio)
-	fmt.Println("O resultado é:", area)
+	fmt.Println("+----------------------------------------+")
+	fmt.Println("| > O resultado é:", area)
+	fmt.Println("+----------------------------------------+")
 	return
 }
