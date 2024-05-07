@@ -15,14 +15,18 @@ func main() {
 func menuPalidromo() {
 	var opcao string
 	for {
-		fmt.Println("O que deseja inserir")
-		fmt.Println("P - Palavra ou Frase")
-		fmt.Println("N - Numero")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|           O que deseja inserir       |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|          P - Palavra ou Frase        |")
+		fmt.Println("|               N - Numero             |")
 		fmt.Print("| > ")
 		_, err := fmt.Scanln(&opcao)
 
 		if err != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|            Opção Inválida            |")
+			fmt.Println("+--------------------------------------+")
 		}
 
 		switch strings.ToUpper(opcao) {
@@ -31,7 +35,9 @@ func menuPalidromo() {
 		case "N":
 			palindromoNumero()
 		default:
-			fmt.Println("Opção Inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|            Opção Inválida            |")
+			fmt.Println("+--------------------------------------+")
 		}
 	}
 }
@@ -41,13 +47,15 @@ func palindromoPalavraOuFrase() {
 	var fraseInvertida strings.Builder
 
 	scannerBufio := bufio.NewScanner(os.Stdin)
-	fmt.Println("Digite a palavra ou frase desejada:")
+	fmt.Println("+--------------------------------------+")
+	fmt.Print("| > Digite a palavra ou frase desejada:")
 	for scannerBufio.Scan() {
 		palavraOuFrase = scannerBufio.Text()
 		if len(palavraOuFrase) > 0 {
 			break
 		}
-		fmt.Println("Entrada inválida. Digite novamente:")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("| Entrada inválida. Digite novamente:")
 	}
 
 	palavraOuFraseSemEspacos := strings.ReplaceAll(strings.ToLower(palavraOuFrase), " ", "")
@@ -56,13 +64,18 @@ func palindromoPalavraOuFrase() {
 		fraseInvertida.WriteByte(palavraOuFraseSemEspacos[i])
 	}
 
-	fmt.Println("Palavra ou Frase:", palavraOuFrase)
-	fmt.Println("Palavra ou Frase invertida:", fraseInvertida.String())
+	fmt.Println("+--------------------------------------+")
+	fmt.Println("| > Palavra ou Frase:", palavraOuFrase)
+	fmt.Println("| > Palavra ou Frase invertida:", fraseInvertida.String())
 
 	if palavraOuFraseSemEspacos == fraseInvertida.String() {
-		fmt.Println("A Palavra ou Frase é um Palíndromo")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|  A Palavra ou Frase é um Palíndromo  |")
+		fmt.Println("+--------------------------------------+")
 	} else {
-		fmt.Println("A Palavra ou Frase não é um Palíndromo")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|A Palavra ou Frase não é um Palíndromo|")
+		fmt.Println("+--------------------------------------+")
 	}
 
 	os.Exit(0)
@@ -73,11 +86,13 @@ func palindromoNumero() {
 	var palindromo bool = true
 
 	for {
-		fmt.Println("Digite o numero desejado:")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("| > Digite o numero desejado:")
 		_, errNumero := fmt.Scanln(&numero)
 
 		if errNumero != nil {
-			fmt.Println("Valor Inválido")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|            Valor Inválido            |")
 		} else {
 			break
 		}
@@ -93,9 +108,13 @@ func palindromoNumero() {
 	}
 
 	if palindromo {
-		fmt.Println("O numero é um Palíndromo")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|       O numero é um Palíndromo       |")
+		fmt.Println("+--------------------------------------+")
 	} else {
-		fmt.Println("O numero não é um Palíndromo")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|      O numero não é um Palíndromo    |")
+		fmt.Println("+--------------------------------------+")
 	}
 	os.Exit(0)
 }

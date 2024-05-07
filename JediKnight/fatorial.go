@@ -7,11 +7,16 @@ import (
 func main() {
 	var numero int = 10
 	for {
-		fmt.Println("Qual é o numero:")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|          CALCULAR FATORIAL           |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Print("| > Qual é o numero:")
 		_, err := fmt.Scanln(&numero)
 
 		if err != nil || numero <= 0 {
-			fmt.Printf("Número Inválido")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|            VALOR INVÁLIDO            |")
+			fmt.Println("+--------------------------------------+")
 		} else {
 			break
 		}
@@ -25,5 +30,6 @@ func calcularFatorial(numero int) {
 		resultado *= i
 	}
 
-	fmt.Println("O fatorial de", numero, "é", resultado)
+	fmt.Println("+--------------------------------------+")
+	fmt.Println("| > O fatorial de", numero, "é", resultado)
 }

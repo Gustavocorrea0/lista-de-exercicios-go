@@ -55,14 +55,16 @@ func votar() {
 		fmt.Println("|                 VOTAR                |")
 		fmt.Println("+--------------------------------------+")
 		fmt.Println("|           90 - Candidato A           |")
-		fmt.Println("|           10 - Candidato B")
-		fmt.Println("|           37 - Candidato C")
-		fmt.Println("|           B - Branco")
-		fmt.Println("|           N - Nulo")
+		fmt.Println("|           10 - Candidato B           |")
+		fmt.Println("|           37 - Candidato C           |")
+		fmt.Println("|           B - Branco                 |")
+		fmt.Println("|           N - Nulo                   |")
+		fmt.Print("| > OPÇÃO DESEJADA:")
 		_, err3 := fmt.Scanln(&voto)
 
 		if err3 != nil {
-			fmt.Println("Voto inválido")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             VOTO INVÁLIDO            |")
 			votar()
 		}
 
@@ -78,7 +80,8 @@ func votar() {
 		case "N":
 			votarEmNulo()
 		default:
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 			votar()
 		}
 	}
@@ -87,26 +90,33 @@ func votar() {
 func votarEmCandidatoA() {
 	var confirmar string
 	for {
-		fmt.Println("CONFIRMAR VOTO")
-		fmt.Println("S para sim")
-		fmt.Println("N para não")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|            CONFIRMAR VOTO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              S - sim                 |")
+		fmt.Println("|              N - não                 |")
+		fmt.Println("| > OPÇÃO DESEJADA")
 		_, err4 := fmt.Scanln(&confirmar)
 
 		if err4 != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		if strings.ToUpper(confirmar) == "S" {
 			candidatoA++
-			fmt.Println("Voto Realizado com SUCESSO")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|      Voto Realizado com SUCESSO      |")
 			menu()
 		}
 
 		if strings.ToUpper(confirmar) == "N" {
-			fmt.Println("Voto cancelado")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             Voto CANCELADO           |")
 			votar()
 		} else {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 	}
 }
@@ -114,26 +124,33 @@ func votarEmCandidatoA() {
 func votarEmCandidatoB() {
 	var confirmar string
 	for {
-		fmt.Println("CONFIRMAR VOTO")
-		fmt.Println("S para sim")
-		fmt.Println("N para não")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|            CONFIRMAR VOTO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              S - sim                 |")
+		fmt.Println("|              N - não                 |")
+		fmt.Println("| > OPÇÃO DESEJADA")
 		_, err4 := fmt.Scanln(&confirmar)
 
 		if err4 != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		if strings.ToUpper(confirmar) == "S" {
 			candidatoB++
-			fmt.Println("Voto Realizado com SUCESSO")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|      Voto Realizado com SUCESSO      |")
 			menu()
 		}
 
 		if strings.ToUpper(confirmar) == "N" {
-			fmt.Println("Voto cancelado")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             Voto CANCELADO           |")
 			votar()
 		} else {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 	}
 }
@@ -141,26 +158,33 @@ func votarEmCandidatoB() {
 func votarEmCandidatoC() {
 	var confirmar string
 	for {
-		fmt.Println("CONFIRMAR VOTO")
-		fmt.Println("S para sim")
-		fmt.Println("N para não")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|            CONFIRMAR VOTO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              S - sim                 |")
+		fmt.Println("|              N - não                 |")
+		fmt.Println("| > OPÇÃO DESEJADA")
 		_, err4 := fmt.Scanln(&confirmar)
 
 		if err4 != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		if strings.ToUpper(confirmar) == "S" {
 			candidatoC++
-			fmt.Println("Voto Realizado com SUCESSO")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|      Voto Realizado com SUCESSO      |")
 			menu()
 		}
 
 		if strings.ToUpper(confirmar) == "N" {
-			fmt.Println("Voto cancelado")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             Voto CANCELADO           |")
 			votar()
 		} else {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 	}
 }
@@ -168,26 +192,33 @@ func votarEmCandidatoC() {
 func votarEmBranco() {
 	var confirmar string
 	for {
-		fmt.Println("CONFIRMAR VOTO")
-		fmt.Println("S para sim")
-		fmt.Println("N para não")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|            CONFIRMAR VOTO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              S - sim                 |")
+		fmt.Println("|              N - não                 |")
+		fmt.Println("| > OPÇÃO DESEJADA")
 		_, err4 := fmt.Scanln(&confirmar)
 
 		if err4 != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		if strings.ToUpper(confirmar) == "S" {
 			votosBranco++
-			fmt.Println("Voto Realizado com SUCESSO")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|      Voto Realizado com SUCESSO      |")
 			menu()
 		}
 
 		if strings.ToUpper(confirmar) == "N" {
-			fmt.Println("Voto cancelado")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             Voto CANCELADO           |")
 			votar()
 		} else {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 	}
 }
@@ -195,26 +226,33 @@ func votarEmBranco() {
 func votarEmNulo() {
 	var confirmar string
 	for {
-		fmt.Println("CONFIRMAR VOTO")
-		fmt.Println("S para sim")
-		fmt.Println("N para não")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|            CONFIRMAR VOTO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              S - sim                 |")
+		fmt.Println("|              N - não                 |")
+		fmt.Println("| > OPÇÃO DESEJADA")
 		_, err4 := fmt.Scanln(&confirmar)
 
 		if err4 != nil {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		if strings.ToUpper(confirmar) == "S" {
 			votosNulos++
-			fmt.Println("Voto Realizado com SUCESSO")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|      Voto Realizado com SUCESSO      |")
 			menu()
 		}
 
 		if strings.ToUpper(confirmar) == "N" {
-			fmt.Println("Voto cancelado")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             Voto CANCELADO           |")
 			votar()
 		} else {
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 	}
 }

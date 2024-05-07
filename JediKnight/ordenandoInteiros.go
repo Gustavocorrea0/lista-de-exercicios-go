@@ -10,13 +10,17 @@ func main() {
 	var numeros []int
 
 	for i := 0; i < totalNumero; i++ {
-
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|       Ordenar números inteiro        |")
 		for {
+			fmt.Println("+--------------------------------------+")
 			fmt.Println("| > Insira um número( faltam", totalNumero-i, "):")
 			_, err := fmt.Scanln(&numeroDigitado)
 
 			if err != nil || numeroDigitado < 0 {
-				fmt.Println("Valor Inválido")
+				fmt.Println("+--------------------------------------+")
+				fmt.Println("|             Valor Inválido           |")
+				fmt.Println("+--------------------------------------+")
 			} else {
 				break
 			}
