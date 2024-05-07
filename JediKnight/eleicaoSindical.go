@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -19,22 +20,29 @@ func main() {
 func menu() {
 	for {
 		var opcao string
-		fmt.Println("MENU DE VOTAÇÃO")
-		fmt.Println("1 - VOTAR")
-		fmt.Println("0 - FINALIZAR VOTACAO")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|           MENU DE VOTAÇÃO            |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|              1 - VOTAR               |")
+		fmt.Println("|          0 - FINALIZAR VOTACAO       |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("| > Opção escolhida:")
+
 		_, err := fmt.Scanln(&opcao)
 
 		if err != nil {
-			fmt.Println("OPÇÃO INVÁLIDA")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 		switch opcao {
 		case "1":
 			votar()
-		case "2":
+		case "0":
 			finalizarVotacao()
 		default:
-			fmt.Println("Opção inválida")
+			fmt.Println("+--------------------------------------+")
+			fmt.Println("|             OPÇÃO INVÁLIDA           |")
 		}
 
 	}
@@ -43,12 +51,14 @@ func menu() {
 func votar() {
 	var voto string
 	for {
-		fmt.Println("VOTAR")
-		fmt.Println("99 - Candidato A")
-		fmt.Println("10 - Candidato B")
-		fmt.Println("37 - Candidato C")
-		fmt.Println("B - Branco")
-		fmt.Println("N - Nulo")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|                 VOTAR                |")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|           90 - Candidato A           |")
+		fmt.Println("|           10 - Candidato B")
+		fmt.Println("|           37 - Candidato C")
+		fmt.Println("|           B - Branco")
+		fmt.Println("|           N - Nulo")
 		_, err3 := fmt.Scanln(&voto)
 
 		if err3 != nil {
@@ -225,15 +235,27 @@ func finalizarVotacao() {
 	percentualBrancos = (float32(votosBranco) / float32(totalDeVotos)) * 100
 	percentualNulos = (float32(votosNulos) / float32(totalDeVotos)) * 100
 
-	fmt.Println("TOTAL DE VOTOS:", totalDeVotos)
-	if candidatoA > candidatoB && candidatoA > candidatoC {
-
+	if totalDeVotos == 0 {
+		fmt.Println("NÃO HOUVERAM VOTOS")
+	} else {
+		fmt.Println("+------------------------------------------------+")
+		if candidatoA > candidatoB && candidatoA > candidatoC {
+			fmt.Println("| > VENCEDOR: CANDIDATO A")
+		} else if candidatoB > candidatoA && candidatoB > candidatoC {
+			fmt.Println("| > VENCEDOR: CANDIDATO B")
+		} else if candidatoC > candidatoA && candidatoC > candidatoB {
+			fmt.Println("| > VENCEDOR: CANDIDATO C")
+		}
+		fmt.Println("+------------------------------------------------+")
+		fmt.Println("| > TOTAL DE VOTOS:", totalDeVotos)
+		fmt.Println("+------------------------------------------------+")
+		fmt.Println("| > CANDIDATO A:", candidatoA, "| > PERCENTUAL: ", percentualCandidatoA, "%")
+		fmt.Println("| > CANDIDATO B:", candidatoB, "| > PERCENTUAL: ", percentualCandidatoB, "%")
+		fmt.Println("| > CANDIDATO C:", candidatoC, "| > PERCENTUAL: ", percentualCandidatoC, "%")
+		fmt.Println("| > BRANCOS:", votosBranco, "| > PERCENTUAL: ", percentualBrancos, "%")
+		fmt.Println("| > NULOS:", votosNulos, "| > PERCENTUAL: ", percentualNulos, "%")
+		fmt.Println("+------------------------------------------------+")
 	}
 
-	fmt.Println("> CANDIDATO A:", candidatoA, "| > PERCENTUAL: ", percentualCandidatoA, "%")
-	fmt.Println("> CANDIDATO B:", candidatoB, "| > PERCENTUAL: ", percentualCandidatoB, "%")
-	fmt.Println("> CANDIDATO C:", candidatoC, "| > PERCENTUAL: ", percentualCandidatoC, "%")
-	fmt.Println("> BRANCOS:", votosBranco, "| > PERCENTUAL: ", percentualBrancos, "%")
-	fmt.Println("> NULOS:", votosNulos, "| > PERCENTUAL: ", percentualNulos, "%")
-
+	os.Exit(0)
 }
