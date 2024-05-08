@@ -13,7 +13,7 @@ func main() {
 		fmt.Println("+--------------------------------------+")
 		fmt.Println("|       Ordenar números inteiro        |")
 		for {
-			fmt.Println("+--------------------------------------+")
+			fmt.Println("+------------------------------------------------+")
 			fmt.Println("| > Insira um número( faltam", totalNumero-i, "):")
 			_, err := fmt.Scanln(&numeroDigitado)
 

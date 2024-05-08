@@ -9,21 +9,22 @@ func main() {
 	var input string
 	for {
 		fmt.Println("+--------------------------------------------------------+")
-		fmt.Println("+    Informe um número para a sequência de Fibonacci:    +")
+		fmt.Println("|                  Sequência de Fibonacci                |")
 		fmt.Println("+--------------------------------------------------------+")
+		fmt.Print("| > Informe um número:")
 		fmt.Scanln(&input)
 		if isValidNumber(input) {
 			break
 		}
 		fmt.Println("+-----------------------------------------------------------+")
-		fmt.Println("+    Por favor, digite apenas Números!. Tente novamente.    +")
+		fmt.Println("|    Por favor, digite apenas Números!. Tente novamente    |")
 		fmt.Println("+-----------------------------------------------------------+")
 	}
 
 	n, _ := strconv.Atoi(input)
 	fibSequence := fibonacciSequence(n)
 	fmt.Println("+------------------------------------------+")
-	fmt.Println("+    Sequência de Fibonacci até", n, ":       +")
+	fmt.Println("+    Sequência de Fibonacci até", n, ":    ")
 	fmt.Println("+------------------------------------------+")
 	for _, num := range fibSequence {
 		fmt.Print(num, " ")

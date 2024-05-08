@@ -11,12 +11,10 @@ func main() {
 	var str1, str2 string
 
 	fmt.Println("+------------------------------------+")
-	fmt.Println("+---- Informe a primeira string: ----+")
-	fmt.Println("+------------------------------------+")
+	fmt.Println("| > Informe a primeira string:")
 	str1 = readString()
 	fmt.Println("+------------------------------------+")
-	fmt.Println("+---- Informe a segunda string: -----+")
-	fmt.Println("+------------------------------------+")
+	fmt.Println("| > Informe a segunda string:")
 	str2 = readString()
 
 	str1 = strings.ToLower(strings.ReplaceAll(str1, " ", ""))
@@ -24,14 +22,14 @@ func main() {
 
 	if len(str1) != len(str2) {
 		fmt.Println("+-----------------------------------------------------------------------+")
-		fmt.Println("+---- As strings não são anagramas por possuir tamanhos diferentes! ----+")
+		fmt.Println("|      As strings não são anagramas por possuir tamanhos diferentes!    |")
 		fmt.Println("+-----------------------------------------------------------------------+")
 		return
 	}
 
 	if str1 == str2 {
 		fmt.Println("+------------------------------------------------------------+")
-		fmt.Println("+---- As strings não são anagramas porque são idênticas. ----+")
+		fmt.Println("|      As strings não são anagramas porque são idênticas     |")
 		fmt.Println("+------------------------------------------------------------+")
 		return
 	}
@@ -44,11 +42,11 @@ func main() {
 
 	if string(runes1) == string(runes2) {
 		fmt.Println("+-----------------------------------+")
-		fmt.Println("+---- As strings são anagramas! ----+")
+		fmt.Println("|     As strings são anagramas!     |")
 		fmt.Println("+-----------------------------------+")
 	} else {
 		fmt.Println("+---------------------------------------+")
-		fmt.Println("+---- As strings não são anagramas. ----+")
+		fmt.Println("|     As strings não são anagramas      |")
 		fmt.Println("+---------------------------------------+")
 	}
 }
@@ -61,7 +59,7 @@ func readString() string {
 			break
 		}
 		fmt.Println("+------------------------------------------------------------+")
-		fmt.Println("+---- Por favor, digite apenas Letras!. Tente novamente: ----+")
+		fmt.Println("|    Por favor, digite apenas Letras!. Tente novamente:      |")
 		fmt.Println("+------------------------------------------------------------+")
 	}
 	return input

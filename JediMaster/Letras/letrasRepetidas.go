@@ -10,7 +10,10 @@ import (
 func main() {
 	var frase string
 	scannerBufio := bufio.NewScanner(os.Stdin)
-	fmt.Println("Qual é a frase: ")
+	fmt.Println("+--------------------------------------+")
+	fmt.Println("|            Letras Repetidas          |")
+	fmt.Println("+--------------------------------------+")
+	fmt.Println("| > Qual é a frase: ")
 	for scannerBufio.Scan() {
 		frase = scannerBufio.Text()
 		if len(frase) > 0 {
@@ -21,9 +24,12 @@ func main() {
 	}
 
 	if letraRepetida, ok := validarLetrasRepetidas2(frase); ok {
-		fmt.Println("A letra:", strings.ToUpper(string(letraRepetida)), ",se repete")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("| A letra:", strings.ToUpper(string(letraRepetida)), ",se repete")
 	} else {
-		fmt.Println("Nenhuma Letra se repete")
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("|         Nenhuma Letra se repete      |")
+		fmt.Println("+--------------------------------------+")
 	}
 
 }
@@ -32,7 +38,8 @@ func buscarLetrasRepetidas(fraseRecebida string) {
 	fraseSemEspacos := strings.ReplaceAll(strings.ToLower(fraseRecebida), " ", "")
 
 	for _, letra := range fraseSemEspacos {
-		fmt.Println("Letra: ", string(letra))
+		fmt.Println("+--------------------------------------+")
+		fmt.Println("| Letra: ", string(letra))
 	}
 }
 

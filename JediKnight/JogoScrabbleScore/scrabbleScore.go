@@ -17,7 +17,7 @@ var pontos int = 0
 
 func main() {
 	fmt.Println("+--------------------------------------+")
-	fmt.Println("|           Scrabble Score             |")
+	fmt.Println("|         Scrabble Score Game          |")
 	receberPalavra()
 }
 
@@ -80,7 +80,7 @@ func jogarScrablleScore(palavra string) {
 	fmt.Println("| > Score da jogada =", pontosDaRodada)
 	fmt.Println("+--------------------------------------+")
 	pontos = pontos + pontosDaRodada
-	fmt.Println("| > Score =", pontos)
+	fmt.Println("| > Score Total =", pontos)
 
 	jogarNovamente()
 }
@@ -94,7 +94,7 @@ func jogarNovamente() {
 		fmt.Println("|               S - sim                |")
 		fmt.Println("|               N - não                |")
 		fmt.Println("+--------------------------------------+")
-		fmt.Print("| Opção desejada:")
+		fmt.Print("| > Opção desejada:")
 		fmt.Scanln(&opcao)
 
 		switch strings.ToUpper(opcao) {
