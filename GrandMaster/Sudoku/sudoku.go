@@ -130,7 +130,7 @@ func jogarSudoku(valorLinha int, valorColuna int, numeroJogador int) {
 
 	if tabuleiro[valorLinha][valorColuna] != 0 {
 		fmt.Println("+----------------------------------+")
-		fmt.Println("|        POSICAO PREENCHIDA        |")
+		fmt.Println("|    POSICAO JÁ ESTÁ PREENCHIDA    |")
 		apresentaTabuleiro()
 	}
 
